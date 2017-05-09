@@ -1,1 +1,9 @@
 This is a simple NodeJS script to spin up a webserver on port 3000 and serve up a parsed apache log file.  This is meant to be used with our smoothwall proxy server as a sort of automatic login in order to keep track of clients.  We parse out the log file so that we just have a list of IP addresses and usernames.  There is a cronjob that runs on the Smoothwall box every minute that sends a request to the server for this information, then puts it into an array which is then feed into a while loop to log in each user/ip in the list.  
+
+To get this up and running, first make sure you have the lastest version of NodeJS installed on the computer that you want to act as the server.
+  1) mkdir logparser
+  2) cd logparser
+  3) npm init (accept all the defaults)
+  4) create server.js using the copy in the repo
+  5) npm install express --save
+  6) nohup node server
